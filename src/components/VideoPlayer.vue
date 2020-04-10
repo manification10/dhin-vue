@@ -4,6 +4,8 @@
 </div>
 </template>
 
+<style>
+</style>
 
 <script>
 import videojs from 'video.js';
@@ -24,11 +26,27 @@ export default {
     }
   },
   mounted() {
-    // let cssScript = document.createElement('script')
-    // cssScript.setAttribute('src', 'video.js/dist/video-js.css')
-    // document.head.appendChild(cssScript)
     this.player = videojs(this.$refs.videoPlayer, this.options, function onPlayerReady() {
       console.log('onPlayerReady', this);
+      this.markers({
+        markers: [{
+            time: 9.5,
+            text: "this"
+          },
+          {
+            time: 16,
+            text: "is"
+          },
+          {
+            time: 23.6,
+            text: "so"
+          },
+          {
+            time: 28,
+            text: "cool"
+          }
+        ]
+      });
     })
   },
   beforeDestroy() {

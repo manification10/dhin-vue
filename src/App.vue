@@ -12,7 +12,7 @@
 <template>
 <div id="app">
   <HelloWorld msg="Welcome to Dhin" />
-  <video-player :options="videoOptions" />
+  <video-player id="videoPlayer" :options="videoOptions" />
 </div>
 </template>
 

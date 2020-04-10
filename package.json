@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "stylelint": "^13.3.1",
+    "videojs-markers": "^1.0.1",
     "vue": "^2.6.11"
   },
   "devDependencies": {
