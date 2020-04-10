@@ -1,6 +1,8 @@
 <template>
 <div>
-  <video ref="videoPlayer" class="video-js"></video>
+  <video ref="videoPlayer" class="video-js" controls autoplay width="640" height="264"
+    data-setup='{ "techOrder": ["youtube"], "sources": [{ "type": "video/youtube", "src": "https://www.youtube.com/embed/b0CX4qBK_fo"}], "youtube": { } }'>
+  </video>
 </div>
 </template>
 
