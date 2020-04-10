@@ -1,21 +1,3 @@
-<template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
-</template>
-
-<script>
-import HelloWorld from './components/HelloWorld.vue'
-
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
-</script>
-
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -26,3 +8,37 @@ export default {
   margin-top: 60px;
 }
 </style>
+
+<template>
+<div id="app">
+  <HelloWorld msg="Welcome to Dhin" />
+  <video-player :options="videoOptions" />
+</div>
+</template>
+
+<script>
+import HelloWorld from './components/HelloWorld.vue'
+import VideoPlayer from './components/VideoPlayer.vue'
+
+export default {
+  name: 'App',
+  components: {
+    HelloWorld,
+    VideoPlayer
+  },
+  data() {
+    return {
+      videoOptions: {
+        autoplay: true,
+        controls: true,
+        loop: true,
+        playbackRates: [0.5, 1, 1.5, 2],
+        sources: [{
+          src: "http://file-examples.com/wp-content/uploads/2017/04/file_example_MP4_480_1_5MG.mp4",
+          type: 'video/mp4'
+        }]
+      }
+    };
+  }
+}
+</script>

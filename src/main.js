@@ -3,6 +3,8 @@ import App from './App.vue'
 
 Vue.config.productionTip = false
 
+require('../node_modules/video.js/dist/video-js.css')
+
 new Vue({
   render: h => h(App),
 }).$mount('#app')
