@@ -1,7 +1,6 @@
 <template>
 <div>
-  <video ref="videoPlayer" class="video-js" controls autoplay width="640" height="264"
-    data-setup='{ "techOrder": ["youtube"], "sources": [{ "type": "video/youtube", "src": "https://www.youtube.com/embed/b0CX4qBK_fo"}], "youtube": { } }'>
+  <video ref="videoPlayer" class="video-js" controls autoplay width="854" height="480" data-setup='{ "techOrder": ["youtube"], "sources": [{ "type": "video/youtube", "src": "https://www.youtube.com/embed/b0CX4qBK_fo"}], "youtube": { } }'>
   </video>
 </div>
 </template>
@@ -11,6 +10,7 @@
 
 <script>
 import videojs from 'video.js';
+import AnnotationComments from '@contently/videojs-annotation-comments';
 
 export default {
   name: "VideoPlayer",
@@ -30,6 +30,7 @@ export default {
   mounted() {
     this.player = videojs(this.$refs.videoPlayer, this.options, function onPlayerReady() {
       console.log('onPlayerReady', this);
+
       this.markers({
         markers: [{
             time: 9.5,

@@ -7,6 +7,10 @@
   color: #2c3e50;
   margin-top: 60px;
 }
+
+#videoPlayer {
+  display: inline-block;
+}
 </style>
 
 <template>
