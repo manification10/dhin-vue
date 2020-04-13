@@ -2,6 +2,9 @@
 <div>
   <video ref="videoPlayer" class="video-js" controls autoplay width="854" height="480" data-setup='{ "techOrder": ["youtube"], "sources": [{ "type": "video/youtube", "src": "https://www.youtube.com/embed/b0CX4qBK_fo"}], "youtube": { } }'>
   </video>
+  <div id="add-marker">
+    <button v-on:click="logWhereYouAt">Add BookMark</button>
+  </div>
 </div>
 </template>
 
@@ -12,6 +15,8 @@
 import videojs from 'video.js';
 import AnnotationComments from '@contently/videojs-annotation-comments';
 
+
+
 export default {
   name: "VideoPlayer",
   props: {
@@ -20,35 +25,32 @@ export default {
       default () {
         return {};
       }
-    }
+    },
   },
   data() {
     return {
       player: null
     }
   },
+  methods: {
+    logWhereYouAt: function() {
+      var whereYouAt = this.player.currentTime();
+      console.log(whereYouAt);
+      this.player.markers.add([{
+        time: whereYouAt,
+        text: 'dummy',
+        overlayText: "Marker added at " + whereYouAt.toFixed(1)
+      }])
+    }
+  },
   mounted() {
     this.player = videojs(this.$refs.videoPlayer, this.options, function onPlayerReady() {
       console.log('onPlayerReady', this);
-
       this.markers({
-        markers: [{
-            time: 9.5,
-            text: "this"
-          },
-          {
-            time: 16,
-            text: "is"
-          },
-          {
-            time: 23.6,
-            text: "so"
-          },
-          {
-            time: 28,
-            text: "cool"
-          }
-        ]
+        breakOverlay: {
+          display: true
+        },
+        markers: []
       });
     })
   },
