@@ -8,6 +8,7 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "video.js": "^7.7.5",
     "@contently/videojs-annotation-comments": "^2.0.1",
     "stylelint": "^13.3.1",
     "videojs-markers": "^1.0.1",
