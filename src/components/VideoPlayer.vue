@@ -1,7 +1,7 @@
 <template>
 <div>
   <video ref="videoPlayer" class="video-js" controls autoplay width="854" height="480"
-    data-setup='{ "techOrder": ["youtube"], "sources": [{ "type": "video/youtube", "src": "https://www.youtube.com/embed/b0CX4qBK_fo"}], "youtube": { "customVars" : { } } }'>
+    data-setup='{ "techOrder": ["youtube"], "sources": [{ "type": "video/youtube", "src": "https://www.youtube.com/embed/yv8mTJCBpi4"}], "youtube": { "customVars" : { } } }'>
   </video>
   <div id="add-marker">
     <button v-on:click="logWhereYouAt">Add BookMark</button>
