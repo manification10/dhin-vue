@@ -23,7 +23,7 @@ import Vue from 'vue';
 export default {
   name: "VideoPlayer",
   components: {
-    ChildVideo
+    // ChildVideo
   },
   props: {
     options: {
