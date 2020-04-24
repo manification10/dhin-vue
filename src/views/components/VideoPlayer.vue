@@ -16,7 +16,7 @@
 <template>
   <div>
     <div class="grid-container">
-      <div>
+      <div id="video">
         <video
           ref="videoPlayer"
           class="video-js"
@@ -26,6 +26,7 @@
           height="480"
           data-setup='{ "techOrder": ["youtube"], "sources": [{ "type": "video/youtube", "src": "https://www.youtube.com/embed/b0CX4qBK_fo"}], "youtube": { "customVars" : { } } }'
         ></video>
+        <p><br/><br/></p>
       </div>
       <div>
         <div id="add-marker">
@@ -114,7 +115,9 @@ export default {
       var ComponentClass = Vue.extend(DummyVideo);
       var instance = new ComponentClass();
       instance.$mount();
-      this.$refs.container.appendChild(instance.$el);
+      // this.$refs.container.appendChild(instance.$el);
+      document.getElementById("video").appendChild(instance.$el);
+
     },
     addChildVideo: function(whereYouAt) {
       console.log("add child video");

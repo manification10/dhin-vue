@@ -26,7 +26,7 @@
       </md-list>
 
       <transition name="fade" mode="out-in">
-        <div class="tab-content">
+        <!-- <div class="tab-content">
           <div
             :class="getTabContent(index + 1)"
             v-for="(item, index) in tabName"
@@ -37,7 +37,7 @@
               This is the default text!
             </slot>
           </div>
-        </div>
+        </div> -->
       </transition>
     </md-card-content>
   </md-card>
