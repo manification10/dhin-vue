@@ -142,7 +142,7 @@
 </template>
 
 <script>
-import { Tabs } from "@/components";
+//import { Tabs } from "@/components";
 import VideoPlayer from './components/VideoPlayer.vue'
 
 export default {

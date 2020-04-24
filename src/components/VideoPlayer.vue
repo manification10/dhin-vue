@@ -15,7 +15,6 @@
 
 <script>
 import videojs from 'video.js';
-import AnnotationComments from '@contently/videojs-annotation-comments';
 import ChildVideo from './ChildVideo'
 import Vue from 'vue';
 
