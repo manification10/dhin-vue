@@ -3,8 +3,12 @@
   <video ref="videoPlayer" class="video-js" controls autoplay width="854" height="480"
     data-setup='{ "techOrder": ["youtube"], "sources": [{ "type": "video/youtube", "src": "https://www.youtube.com/embed/yv8mTJCBpi4"}], "youtube": { "customVars" : { } } }'>
   </video>
+  <DummyVideo />
   <div id="add-marker">
     <button v-on:click="logWhereYouAt">Add BookMark</button>
+  </div>
+  <div id="pose-feedback">
+    <button v-on:click="showFeedback">Get Pose Feed</button>
   </div>
   <div ref="container"></div>
 </div>
@@ -16,6 +20,7 @@
 <script>
 import videojs from 'video.js';
 import ChildVideo from './ChildVideo'
+import DummyVideo from './DummyVideo'
 import Vue from 'vue';
 
 
@@ -23,6 +28,7 @@ export default {
   name: "VideoPlayer",
   components: {
     // ChildVideo
+    DummyVideo
   },
   props: {
     options: {
@@ -48,6 +54,12 @@ export default {
         overlayText: "Marker added at " + whereYouAt
       }])
       this.addChildVideo(whereYouAt);
+    },
+    showFeedback: function(){
+      var ComponentClass = Vue.extend(DummyVideo);
+      var instance = new ComponentClass();
+      instance.$mount();
+      this.$refs.container.appendChild(instance.$el);
     },
     addChildVideo: function(whereYouAt) {
       console.log("add child video")

@@ -2,7 +2,7 @@
 <div>
   <h3> start: {{ start }} end: {{ end}} </h3>
   <video ref="childVideo" class="video-js" controls autoplay width="854" height="480"
-    data-setup='{ "techOrder": ["html", "youtube"],"sources": [{ "type": "video/youtube", "src": "https://www.youtube.com/embed/yv8mTJCBpi4"}],"youtube": { "customVars" : { } } }'>
+    data-setup='{ "techOrder": ["youtube"],"sources": [{ "type": "video/youtube", "src": "https://www.youtube.com/embed/yv8mTJCBpi4"}],"youtube": { "customVars" : { } } }'>
   </video>
 </div>
 </template>

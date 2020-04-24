@@ -52,12 +52,12 @@
               </md-button>
 
               <!-- STICK FIGURE -->
-              <md-button v-on:click="logWhereYouAt" class="md-primary md-just-icon md-round"><md-icon>accessibility</md-icon>
+              <md-button v-on:click="showFeedback" class="md-primary md-just-icon md-round"><md-icon>accessibility</md-icon>
                 <md-tooltip md-direction="bottom">Add Stick Figures</md-tooltip>
               </md-button>
 
               <!-- WEBCAM -->
-              <md-button v-on:click="logWhereYouAt" class="md-primary md-just-icon md-round"><md-icon>videocam</md-icon>
+              <md-button v-on:click="showFeedback" class="md-primary md-just-icon md-round"><md-icon>videocam</md-icon>
                 <md-tooltip md-direction="bottom">Turn on Split Screen</md-tooltip>
               </md-button>
           </div>
@@ -74,8 +74,8 @@
 
 <script>
 import videojs from "video.js";
-import AnnotationComments from "@contently/videojs-annotation-comments";
 import ChildVideo from "./ChildVideo";
+import DummyVideo from './DummyVideo';
 import Vue from "vue";
 
 export default {
@@ -109,6 +109,12 @@ export default {
         }
       ]);
       this.addChildVideo(whereYouAt);
+    },
+    showFeedback: function(){
+      var ComponentClass = Vue.extend(DummyVideo);
+      var instance = new ComponentClass();
+      instance.$mount();
+      this.$refs.container.appendChild(instance.$el);
     },
     addChildVideo: function(whereYouAt) {
       console.log("add child video");
