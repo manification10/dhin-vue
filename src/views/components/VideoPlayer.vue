@@ -1,15 +1,15 @@
 <style>
 .grid-container {
   display: grid;
-  grid-template-columns: auto 20px;
-  grid-gap: 10px;
+  grid-template-columns: auto auto auto;
+  grid-gap: 30px;
   padding: 10px;
 }
 
 .grid-container > div {
   text-align: center;
   padding: 20px 0;
-  font-size: 30px;
+  font-size: 12px;
 }
 </style>
 
@@ -63,6 +63,7 @@
           </div>
         </div>
       </div>
+      <div id="child">Add bookmarks to break the video down into steps!</div>
     </div>
 
     <div ref="container"></div>
@@ -132,7 +133,8 @@ export default {
         propsData: { start: child.start, end: child.end}
       });
       instance.$mount();
-      this.$refs.container.appendChild(instance.$el);
+      // this.$refs.container.appendChild(instance.$el);
+      document.getElementById("child").appendChild(instance.$el);
     },
   },
   mounted() {
