@@ -22,12 +22,10 @@ Vue.config.productionTip = false;
 
 Vue.use(MaterialKit);
 
-//MEERA
-require('../node_modules/video.js/dist/video-js.css')
-require('../node_modules/videojs-markers/dist/videojs.markers.css')
-require('../node_modules/videojs-markers/dist/videojs-markers.js')
-require('../node_modules/videojs-youtube/dist/Youtube.js')
-//MEERA
+require('./../node_modules/video.js/dist/video-js.css')
+require('./../node_modules/videojs-markers/dist/videojs.markers.css')
+require('./../node_modules/videojs-markers/dist/videojs-markers.js')
+require('./../node_modules/videojs-youtube/dist/Youtube.js')
 
 const NavbarStore = {
   showNavbar: false
